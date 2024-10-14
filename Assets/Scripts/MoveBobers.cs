@@ -36,6 +36,10 @@ public class MoveBobers : MonoBehaviour
                     }
                     break;
                 case TouchPhase.Moved:
+                    if (objectToMove != null)
+                    {
+                        objectToMove.transform.position = touchPosition;
+                    }
                     break;
                 case TouchPhase.Stationary:
                     break;
@@ -44,6 +48,7 @@ public class MoveBobers : MonoBehaviour
                     objectToMove = null;
                     break;
                 case TouchPhase.Canceled:
+                    objectToMove = null;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
