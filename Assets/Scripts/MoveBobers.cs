@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class MoveBobers : MonoBehaviour
 {
-    private Vector3 mousePosition;
     RaycastHit hit;
     private Touch touch;
+    Vector3 touchPosition;
+    GameObject objectToMove;
 
     [SerializeField] int layerMask;
     // Start is called before the first frame update
@@ -19,7 +20,38 @@ public class MoveBobers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MouseMove();
+        
+        if (Input.touchCount > 0)
+        {
+            touchPosition = Input.GetTouch(0).position;
+            switch (touch.phase)
+            {
+                
+                case TouchPhase.Began:
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+                    {
+                        objectToMove = hit.transform.gameObject;
+                        objectToMove.GetComponent<MergeBober>().isHolded = true;
+                    }
+                    break;
+                case TouchPhase.Moved:
+                    break;
+                case TouchPhase.Stationary:
+                    break;
+                case TouchPhase.Ended:
+                    objectToMove.GetComponent<MergeBober>().isHolded = false;
+                    objectToMove = null;
+                    break;
+                case TouchPhase.Canceled:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+        
+        
+        /*MouseMove();
         if(Input.touchCount > 0)
         {
             MouseMove();
@@ -51,17 +83,13 @@ public class MoveBobers : MonoBehaviour
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
+        }*/
     }
     
     
 
     void MouseMove()
     {
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        mousePosition.z = 0;
-        transform.position = mousePosition;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity,layerMask))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
