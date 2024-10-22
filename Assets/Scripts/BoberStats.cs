@@ -8,6 +8,8 @@ public class BoberStats : MonoBehaviour
 
     public GameObject nextBober;
 
+    public int boberLevel;
+
     // Update is called once per frame
     void Update()
     {

@@ -8,12 +8,15 @@ public class MergeBober : MonoBehaviour
     public string boberTag;
 
     private GameObject boberToSpawn;
+    private int boberLevel;
 
     public bool isHolded;
 
     private void Start()
     {
+        boberToSpawn = GetComponent<BoberStats>().nextBober;
         isHolded = false;
+        boberLevel = GetComponent<BoberStats>().boberLevel;
     }
 
 
@@ -21,11 +24,14 @@ public class MergeBober : MonoBehaviour
     {
         if (other.tag == boberTag && isHolded == true)
         {
-            print("TEst");
-            boberToSpawn = other.GetComponent<BoberStats>().nextBober;
-            Destroy(other.gameObject);
-            Instantiate(boberToSpawn);  
-            Destroy(this);
+            Debug.Log(other.GetComponent<BoberStats>().boberLevel + " Level");
+            
+            if (other.GetComponent<BoberStats>().boberLevel == boberLevel)
+            {
+                Destroy(other.gameObject);
+                Instantiate(boberToSpawn,transform.position,transform.rotation);  //Spawn nowego mobka
+                Destroy(gameObject);  
+            }
         }
     }
 }
