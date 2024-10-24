@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7aa4add01f8cc4e8d848b0495bd6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boberTag: Bober_0
+  boberTag: Bober
   isHolded: 0
 --- !u!54 &8392181450265449664
 Rigidbody:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,12 @@ public class CrateOpener : MonoBehaviour
     private Camera cam;
     
     [SerializeField] private LayerMask layerMask;
+
+
+    void Awake()
+    {
+        cam = Camera.main;
+    }
 
     void Update()
     {
