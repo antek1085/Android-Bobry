@@ -3518,7 +3518,7 @@ MonoBehaviour:
   cornerUp: {fileID: 349121364}
   cornerDown: {fileID: 62670701}
   spawnCrate: {fileID: 5859867853336700041, guid: 219d78dac40144c4b8f7e6a04e8b4316, type: 3}
-  spawnSound: {fileID: 8300000, guid: ba59fba7687bf334eb748c621397b2c4, type: 3}
+  spawnSound: {fileID: 8300000, guid: da94657905531f445b4b6ef793b89d34, type: 3}
   crateSpawnTimer: {fileID: 11400000, guid: 6c4e404a0fcd7254196150046f5347bc, type: 2}
 --- !u!1 &2059486649
 GameObject:
@@ -3667,6 +3667,10 @@ PrefabInstance:
     - target: {fileID: 310644491754546619, guid: a5f3f39a1aa424e49b042e525c7d2ff0, type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310644491754546619, guid: a5f3f39a1aa424e49b042e525c7d2ff0, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 310644491754546619, guid: a5f3f39a1aa424e49b042e525c7d2ff0, type: 3}
       propertyPath: m_audioClip
