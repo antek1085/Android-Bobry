@@ -13,16 +13,17 @@ public class BoberRandomSpawn : MonoBehaviour
 
     [SerializeField] private GameObject spawnCrate;
 
-    public int crateSpawnTimer;
+    public SO_Int crateSpawnTimer;
 
     private void Start()
     {
+        crateSpawnTimer.soInt = 10;
         StartCoroutine(SpawnRandom());
     }
 
     IEnumerator SpawnRandom()
     {
-        yield return new WaitForSeconds(crateSpawnTimer);
+        yield return new WaitForSeconds(crateSpawnTimer.soInt);
         randomX = Random.Range(leftCornerX.position.x,rightCornerX.position.x);
         randomY = Random.Range(cornerDown.position.y, cornerUp.position.y);
         new Vector3(randomX, randomY, 0);

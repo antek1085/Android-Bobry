@@ -7,7 +7,7 @@ public class MoneyController : MonoBehaviour
 {
     private int moneyGain;
     private float time;
-    public int allMoney;
+    [SerializeField] SO_Int playerMoney;
     private void Start()
     {
         EventSystem.current.onMoneyGainChange += onMoneyGanChange;
@@ -21,9 +21,8 @@ public class MoneyController : MonoBehaviour
         if (time > 1)
         {
             time = 0;
-            allMoney += moneyGain;
+            playerMoney.soInt += moneyGain;
         }
-        Debug.Log("Money" + allMoney);
     }
 
     // Update is called once per frame
