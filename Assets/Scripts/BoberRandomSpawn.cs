@@ -39,7 +39,7 @@ public class BoberRandomSpawn : MonoBehaviour
 
             if(audioSource && spawnSound)
             {
-                audioSource.PlayOneShot(spawnSound)
+                audioSource.PlayOneShot(spawnSound);
             }
             yield return StartCoroutine(SpawnRandom());
         }

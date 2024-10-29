@@ -20,15 +20,6 @@ public class ShopController : MonoBehaviour
    [SerializeField] int moneyNeededMoreBober;
    int boberSpaceUpgradeAlready;
    
-   
-   
-
-    [Header("Spawn Upgrade")]
-    [SerializeField] SO_Int crateSpawnTimer;
-    public int upgradeLimit;
-    int spawnbUpgradeAlready;
-    [SerializeField] int moneyNeeded;
-    [SerializeField] TextMeshProUGUI buttonTextSpawn;
 
     [Header("Sound Settings")]
     [SerializeField] private AudioClip upgradeSound; // Pole na d�wi�k przy przycisku
