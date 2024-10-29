@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4603fc38d86d84f930bd26a1fc2ad2, type: 3}
   m_Name: Bober_Allowed_To_Spawn
   m_EditorClassIdentifier: 
-  soInt: 0
+  soInt: 8

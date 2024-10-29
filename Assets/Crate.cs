@@ -10,7 +10,7 @@ public class Crate : MonoBehaviour
 
     public void CreateOpen()
     {
-        Instantiate(boberToSpawn, this.transform.position, Quaternion.Euler(-270, -90, 90));
+        Instantiate(boberToSpawn, this.transform.position, Quaternion.Euler(0, -0, 0));
         Destroy(this.gameObject);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class MoneyController : MonoBehaviour
     System.DateTime leftGameData = new DateTime();
     DateTime joinGameAgain = new DateTime();
     int timePassed;
+    [SerializeField] TextMeshProUGUI showMoney;
+    [SerializeField] TextMeshProUGUI moneyGainText;
     private void Start()
     {
         EventSystem.current.onMoneyGainChange += onMoneyGanChange;
@@ -22,6 +25,7 @@ public class MoneyController : MonoBehaviour
 
     private void Update()
     {
+        
         time += Time.deltaTime;
 
         if (time > 1)
@@ -29,6 +33,8 @@ public class MoneyController : MonoBehaviour
             time = 0;
             playerMoney.soInt += moneyGain;
         }
+        showMoney.text = playerMoney.soInt.ToString();
+        moneyGainText.text = moneyGain.ToString() + "/s";
     }
 
     // Update is called once per frame

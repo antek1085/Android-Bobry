@@ -28,6 +28,7 @@ public class ShopController : MonoBehaviour
      void Start()
     {
         buttonTextSpawn.text = moneyNeeded.ToString();
+        buttonTextMoreBobers.text = moneyNeededMoreBober.ToString();
 
         // Dodaj AudioSource do obiektu, je�li jeszcze go nie ma
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -55,9 +56,10 @@ public class ShopController : MonoBehaviour
    {
         if(PlayerMoney.soInt > moneyNeededMoreBober)
       {
-         PlayerMoney.soInt -= moneyNeededMoreBober;
+          buttonTextMoreBobers.text = moneyNeededMoreBober.ToString();
+          PlayerMoney.soInt -= moneyNeededMoreBober;
          maxBoberAllowed.soInt += 5;
-         moneyNeededMoreBober *= 2;
+         moneyNeededMoreBober *= 10;
       }
    }
    

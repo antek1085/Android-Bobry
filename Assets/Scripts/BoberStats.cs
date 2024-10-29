@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class BoberStats : MonoBehaviour
@@ -25,6 +26,15 @@ public class BoberStats : MonoBehaviour
         {
             audioSource.PlayOneShot(startSound);
         }
+
+        StartCoroutine(BoberDance());
+    }
+
+    IEnumerator BoberDance()
+    {
+        yield return new WaitForSeconds(8);
+        this.gameObject.transform.DOJump(this.gameObject.transform.position, 1f, 1, 0.5f, true);
+        yield return StartCoroutine(BoberDance());
     }
 
     void OnDestroy()
