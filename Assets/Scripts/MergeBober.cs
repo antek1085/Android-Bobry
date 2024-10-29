@@ -8,6 +8,7 @@ public class MergeBober : MonoBehaviour
     public string boberTag;
 
     private GameObject boberToSpawn;
+    public GameObject blow;
     private int boberLevel;
 
     public bool isHolded;
@@ -29,6 +30,7 @@ public class MergeBober : MonoBehaviour
             if (other.GetComponent<BoberStats>().boberLevel == boberLevel)
             {
                 Destroy(other.gameObject);
+                Instantiate(blow,transform.position,transform.rotation);
                 Instantiate(boberToSpawn,transform.position,transform.rotation);  //Spawn nowego mobka
                 Destroy(gameObject);  
             }

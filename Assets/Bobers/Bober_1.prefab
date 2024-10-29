@@ -125,7 +125,9 @@ MonoBehaviour:
   nextBober: {fileID: 6281141418002731833, guid: fe1e8acca322e674e8c515fb367414d8, type: 3}
   boberLevel: 1
   boberSpawned: {fileID: 11400000, guid: 8f42ea45bc5c9464f9c1acf5874f1ac0, type: 2}
+  animator: {fileID: 0}
   startSound: {fileID: 8300000, guid: ba59fba7687bf334eb748c621397b2c4, type: 3}
+  poop: {fileID: 3180732473470455431, guid: de3aa6cfca6a63e4aa4789501f0d562b, type: 3}
 --- !u!114 &6983577673323483603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boberTag: Bober
+  blow: {fileID: 8898969215368041821, guid: 1d8b4a16e5d5fd14fb69f243bf97d80c, type: 3}
   isHolded: 0
 --- !u!54 &4171456329692189201
 Rigidbody:

@@ -10,9 +10,11 @@ public class BoberStats : MonoBehaviour
     public GameObject nextBober;
     public int boberLevel;
     [SerializeField] SO_Int boberSpawned;
+    [SerializeField] Animator animator;
 
     [SerializeField] private AudioClip startSound; // Dodaj d�wi�k na starcie
     private AudioSource audioSource;
+    [SerializeField] GameObject poop;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class BoberStats : MonoBehaviour
         audioSource.clip = startSound;
         boberSpawned.soInt += 1;
         EventSystem.current.MoneyGainChange(moneyGain);
+        
 
         if(audioSource && startSound)
         {
@@ -33,6 +36,7 @@ public class BoberStats : MonoBehaviour
     IEnumerator BoberDance()
     {
         yield return new WaitForSeconds(8);
+        Instantiate(poop, transform.position, Quaternion.identity);
         this.gameObject.transform.DOJump(this.gameObject.transform.position, 1f, 1, 0.5f, true);
         yield return StartCoroutine(BoberDance());
     }
