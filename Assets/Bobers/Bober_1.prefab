@@ -123,6 +123,7 @@ MonoBehaviour:
   moneyGain: 1
   nextBober: {fileID: 825789754555317771, guid: b1f175c5a1cc80c4180feff61b39b90c, type: 3}
   boberLevel: 1
+  startSound: {fileID: 8300000, guid: ba59fba7687bf334eb748c621397b2c4, type: 3}
   boberSpawned: {fileID: 11400000, guid: 8f42ea45bc5c9464f9c1acf5874f1ac0, type: 2}
 --- !u!114 &7607100751735493417
 MonoBehaviour:

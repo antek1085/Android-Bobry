@@ -5,6 +5,8 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     [SerializeField] GameObject boberToSpawn;
+    private AudioSource audioSource;
+
 
     public void CreateOpen()
     {
