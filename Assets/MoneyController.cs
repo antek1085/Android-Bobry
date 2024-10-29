@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoneyController : MonoBehaviour
@@ -8,6 +9,11 @@ public class MoneyController : MonoBehaviour
     private int moneyGain;
     private float time;
     [SerializeField] SO_Int playerMoney;
+
+
+    System.DateTime leftGameData = new DateTime();
+    DateTime joinGameAgain = new DateTime();
+    int timePassed;
     private void Start()
     {
         EventSystem.current.onMoneyGainChange += onMoneyGanChange;
@@ -30,4 +36,26 @@ public class MoneyController : MonoBehaviour
     {
         moneyGain += money;
     }
+    
+
+    /*void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus == true)
+        {
+            if (joinGameAgain != leftGameData)
+            {
+                timePassed = joinGameAgain.Day * 1440 + joinGameAgain.Hour * 60 + joinGameAgain.Minute -
+                             (leftGameData.Day * 1440 + leftGameData.Hour * 60 + joinGameAgain.Minute);
+                playerMoney.soInt += moneyGain * 60 * timePassed;
+                Debug.Log(timePassed + "  TEST");
+            }
+            joinGameAgain = DateTime.Now;
+        }
+        else
+        {
+            leftGameData = DateTime.Now;
+            Debug.Log("Pouse Starts");
+        }
+            
+    }*/
 }
