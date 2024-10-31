@@ -35,6 +35,10 @@ public class MoneyController : MonoBehaviour
         }
         showMoney.text = playerMoney.soInt.ToString();
         moneyGainText.text = moneyGain.ToString() + "/s";
+        
+        
+        Debug.Log(joinGameAgain + " Join GAME DATA");
+        Debug.Log(leftGameData + " LEFT GAME DATA");
     }
 
     // Update is called once per frame
@@ -44,18 +48,18 @@ public class MoneyController : MonoBehaviour
     }
     
 
-    /*void OnApplicationFocus(bool hasFocus)
+    void OnApplicationFocus(bool hasFocus)
     {
         if (hasFocus == true)
         {
             if (joinGameAgain != leftGameData)
             {
+                joinGameAgain = DateTime.Now;
                 timePassed = joinGameAgain.Day * 1440 + joinGameAgain.Hour * 60 + joinGameAgain.Minute -
-                             (leftGameData.Day * 1440 + leftGameData.Hour * 60 + joinGameAgain.Minute);
+                             (leftGameData.Day * 1440 + leftGameData.Hour * 60 + leftGameData.Minute);
                 playerMoney.soInt += moneyGain * 60 * timePassed;
                 Debug.Log(timePassed + "  TEST");
             }
-            joinGameAgain = DateTime.Now;
         }
         else
         {
@@ -63,5 +67,5 @@ public class MoneyController : MonoBehaviour
             Debug.Log("Pouse Starts");
         }
             
-    }*/
+    }
 }
